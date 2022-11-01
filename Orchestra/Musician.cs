@@ -8,6 +8,9 @@ namespace Orchestra
 {
     public class Musician
     {
+
+        private List<Instrument> _instruments;
+
         private string _name;
 
         public string Name
@@ -34,9 +37,15 @@ namespace Orchestra
 
         public Musician(string name, string address, int experience)
         {
+            _instruments = new List<Instrument>();
             _name = name;
             _address = address;
             _experience = experience;
+        }
+
+        public void AddInstrument(Instrument intstrument)
+        {
+            _instruments.Add(intstrument);
         }
 
         public double Salary()
@@ -45,7 +54,13 @@ namespace Orchestra
         }
         public override string ToString()
         {
-            return $"Name {_name} Address {_address} Experence {_experience}";
+            string myInstruments = "";
+            foreach (Instrument instrument in _instruments)
+            {
+                myInstruments = myInstruments +" " + instrument.ToString(); 
+            }
+
+            return $"Name {_name} Address {_address} Experence {_experience} instrumenter {myInstruments}";
         }
 
 
