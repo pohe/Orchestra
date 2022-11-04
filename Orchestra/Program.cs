@@ -5,8 +5,6 @@ using Orchestra;
 
 Console.WriteLine("Welcome to Music-World!");
 
-
-
 Musician m1 = new Musician("Jimi Hendrix", "Guitar street 123", 10);
 Musician m2 = new Musician("Freddy Mercury", "Drumsstreet 321", 15);
 Musician m3 = new Musician("John Lennon", "Songstreet 656", 12);
@@ -20,7 +18,9 @@ Console.WriteLine(m1.ToString());
 
 Conductor c1 = new Conductor("Karajan", "Chief Conductor");
 
-Orchestra.Orchestra orchestra = new Orchestra.Orchestra(c1, "Kaizers Orchestra", 1);
+ConcertHall ch = new ConcertHall("Concerthall street" , 5000); 
+
+Orchestra.Orchestra orchestra = new Orchestra.Orchestra(c1, "Kaizers Orchestra", 1, ch);
 orchestra.AddMusician(m1);
 orchestra.AddMusician(m2);
 orchestra.AddMusician(m3);

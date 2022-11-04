@@ -31,12 +31,21 @@ namespace Orchestra
             set { _id = value; }
         }
 
-        public Orchestra( Conductor theConductor, string orchestraName, int id)
+        private ConcertHall _concertHall;
+
+        public ConcertHall ConcertHall
+        {
+            get { return _concertHall; }
+            set { _concertHall = value; }
+        }
+
+        public Orchestra( Conductor theConductor, string orchestraName, int id, ConcertHall concertHall)
         {
             _musicians = new List <Musician>();
             _theConductor = theConductor;
             _orchestraName = orchestraName;
             _id = id;
+            _concertHall = concertHall;
         }
 
         public void AddMusician(Musician aMusician)
